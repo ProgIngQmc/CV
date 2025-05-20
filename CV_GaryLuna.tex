@@ -1,0 +1,217 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+\usepackage[spanish]{babel}
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Gary Luna} \\[7.5pt]
+\href{https://github.com/ProgIngQmc}{\raisebox{-0.05\height}\faGithub\ ProgIngQmc} \ $|$ \ 
+\href{https://www.linkedin.com/in/gary-luna-cuaquira-2302a7b7}{\raisebox{-0.05\height}\faLinkedin\ Gary Luna Cuaquira} \ $|$ \\ 
+\href{https://sites.google.com/view/enjambreopt}{\raisebox{-0.05\height}\faGlobe \ https://sites.google.com/view/enjambreopt} \ $|$ \\ 
+\href{mailto:garylunacuaquira@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ garylunacuaquira@gmail.com} \ $|$ \ 
+\href{https://wa.me/59163201814}{\raisebox{-0.05\height}\faMobile \ tel: +591 63201814} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Resumen}
+Ingeniero químico con fuerte orientación hacia la programación, modelado y simulación numérica. Comprometido con el análisis y la resolución de problemas mediante el uso de modelos matemáticos y técnicas avanzadas de simulación de procesos.
+\href{https://github.com/ProgIngQmc}{click aquí}.
+
+%Experience
+\section{Experiencia Laboral}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Operador de sala de control de Planta de Amoniaco} & \hfill Marzo 2024 - presente \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Operación, arranque y paro de equipos (bombas, turbinas, ventiladores, equipos estáticos) desde el panel de control. Apoyo al área de Ingeniería en análisis de causa raíz, diseño de sistemas hidráulicos y simulación de procesos.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Operador de sala de control de Planta de Amoniaco Jr.} & \hfill Abril 2022 - Febrero 2024 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Operación desde sala de control y soporte a ingeniería en diagnóstico de fallas y simulaciones.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Operador de campo de Planta de Amoniaco Jr.} & \hfill Febrero 2020 - Marzo 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Arranque, operación y paro de equipos (bombas, turbinas, ventiladores, equipos estáticos) de la planta de amoniaco. Colaboración en proyectos de análisis y simulación de sistemas hidráulicos.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Auxiliar de laboratorio de complejo petroquímico} & \hfill Agosto 2018 - Febrero 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Muestreo y análisis de líquidos, sólidos y gases en plantas de Utilidades, Urea y Amoniaco. Apoyo en proyectos de mejora de procesos en coordinación con Operaciones e Ingeniería.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Asistente de sistemas de apoyo crítico de Laboratorios Bagó} & \hfill Diciembre 2016 - Agosto 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Gestión de sistemas auxiliares críticos: agua purificada, vapor, aire comprimido y HVAC.}  \\
+\end{tabularx}
+
+%Projects
+\section{Proyectos}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Sistema de bombeo de condensado de proceso} & \hfill  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Diseño de un sistema de bombeo de condensado de proceso para su aprovechamiento. En el cual se realiza el cálculo hidráulico para el sistema y el dimensionamiento de la bomba.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Educación}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2024 - 2025 & Master en Ingeniería Matemática y Computación en \textbf{Universidad Internacional de La Rioja} \hfill (Nota: 9.00/10.0)\normalsize  \\
+
+2023 - 2024 & Master en Inteligencia Artificial en \textbf{Universidad Isabel I} \hfill (Nota: 9.53/10.0) \\ 
+
+2008 - 2016 & Ingeniería Química en \textbf{Universidad Mayor de San Andrés} \hfill (Nota: 86.45/100.0) \\ 
+2013 - 2015 & Auxiliar de docencia en \textbf{Laboratorio de Química General y Fenómenos de Transporte}  \\
+%2014 & Auxiliar de docencia en \textbf{Fenómenos de Transporte}  \\
+& Auxiliar de investigación en \textbf{Modelación y Simulación Numérica}  \\
+%& Alumno destacado en \textbf{Petroquímica I}  \\
+%& Alumno destacado en \textbf{Introducción a la ciencia de los polímeros}  \\
+%& Alumno destacado en \textbf{Organización y administración industrial}  \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+%\section{Publications}
+%\begin{refsection}[citations.bib]
+%\nocite{*}
+%\printbibliography[heading=none]
+%\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Habilidades y programas}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\LaTeX &  \normalsize{Básico, edición de textos.}\\
+PipeFlo &  \normalsize{Básico, modelaje y simulación de sistemas fluidos.}\\
+Python &  \normalsize{Básico, programación orientada a objetos.}\\
+Matlab &  \normalsize{Básico, modelaje y simulación de procesos químicos.}\\
+R &  \normalsize{Básico, programación de métodos estadísticos.}\\
+Power BI &  \normalsize{Básico, visualización y análisis de datos.}\\
+Visual Basic (Macros en excel)  &  \normalsize{Intermedio, programación de hojas automatizadas.}\\ 
+Aspen Hysys y Aspen Plus  &  \normalsize{Intermedio, modelaje y simulación de procesos químicos que ayudan a predecir el comportamiento de equipos industriales.}\\  
+\end{tabularx}
+\vfill
+\center{\footnotesize Última actualización: \today}
+
+\end{document}
